@@ -1,0 +1,121 @@
+body{
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    font-family: Arial;
+    font-size: 17px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:rgb(138, 43, 226);
+}
+  
+li {
+    float: left;
+}
+  
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+  
+li a:hover:not(.active) {
+    background-color: #111;
+}
+  
+.active {
+    background-color: black;
+}
+body{
+  background-image: url("./assets/two.webp");
+  background-repeat: no-repeat;
+  background-position:center;
+  background-size: cover;
+}
+
+.images{
+    width: 40px;
+  }
+
+
+.log{
+  width:80%;
+  background-color:white;
+  margin-left:auto;
+  margin-right:auto;
+  padding:20px;
+  max-width:500px;
+}
+h1 {
+  font-size: 40px;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-family: Impact, serif;
+  text-align: center;
+}
+h2{
+  font-size:30px;
+  margin-top: 0;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-align:center;
+}
+.form{
+  text-align: center;
+  font-family:  Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+  font-size:20px;
+
+}
+.leg{
+  color: blueviolet;
+  font-size:20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; 
+}
+
+.active {
+  background-color: black;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  transition: 0.3s;
+  width: 30%;
+}
+
+.card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+.container {
+  padding: 2px 16px;
+}
+.imgs{
+  width: 40px;
+}
+
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0,0,0,0.2);
+  color: black;
+  width: 100%;
+  padding: 20px;
+}
+.button{
+  background-color: white;
+  font-size: 20px;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  border: none;
+  color: whitesmoke;
+  border: 2px solid black;
+  border-radius: 4px;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}

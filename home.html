@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <head>
+        <title>Home</title>
+    </head>
+        <link href="home.css" rel="stylesheet">
+        <body>
+
+
+            <ul>
+                <li><img src="assets/home-page.png" class="imgs"></li>
+                <li><a href="employee.html">Employee Details</a></li>
+                <li><a href="view.html">View</a></li>
+                <li><a href="attendance.html">Attendance</a></li>
+                <li><a href="payslip.html">Pay Slip</a></li>
+                <li><a href="project.html">Project Management</a></li>
+                <li style="float:right"><a class="active" href="home.html">About</a></li>
+              </ul>
+   
+            <video autoplay muted loop id="myVideo">
+              <source src="assets/gif2.mp4" type="video/mp4">
+              Your browser does not support HTML5 video.
+            </video>
+            <audio src="assets/file_example_MP3_5MG.mp3" controls></audio>
+
+            
+            <div class="content">
+              <h1>PAYROLL MANAGEMENT SYSTEM</h1>
+              <p>“Employee Database And Payroll Management System” is designed to make the existing
+                manual system automatic with the help of computerised equipment and full-edged computer
+                software, fulfilling their requirements, so that their valuable data and information can be stored
+                for a longer period with easy access and manipulation of the same.</p>
+              <button id="myBtn" onclick="myFunction()">Pause</button>
+            </div>
+            
+            <script>
+              var video = document.getElementById("myVideo");
+              var btn = document.getElementById("myBtn");
+              
+              function myFunction() {
+                if (video.paused) {
+                  video.play();
+                  btn.innerHTML = "Pause";
+                } else {
+                  video.pause();
+                  btn.innerHTML = "Play";
+                }
+              }
+              </script>
+
+        <!--<h2>Employee</h2>
+                
+         <div class="card">
+        <img src="assets/sand.jpeg" alt="card" style="width:100%">
+       <div class="container">
+      <h4><b>project Management</b></h4>
+      </div>
+     </div>
+
+
+        <h2>Employee</h2>
+
+      <div class="card">
+      <div class="row">
+      <div class="column">
+      <img src="assets/sand.jpeg" alt="card" style="width:100%">
+      <div class="container">
+    <h4><b>project Management</b></h4>
+  </div>
+</div>
+</div>
+</div> -->
+</body>
+</html>
+        

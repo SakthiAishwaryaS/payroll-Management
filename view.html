@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>View Employee</title>
+            <link href="employee.css" rel="stylesheet">
+            </head>
+      <body style="background-color:blueviolet;">
+    <ul>
+        <li><img src="assets/home-page.png" class="images" align="left"></li>
+        <li><a href="employee.html">Employee Details</a></li>
+        <li><a href="view.html">View</a></li>
+        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="payslip.html">Pay Slip</a></li>
+        <li><a href="project.html">Project Management</a></li>
+        <li style="float:right"><a class="active" href="home.html">About</a></li>
+      </ul>
+      <div class="log">
+        <main>
+            <section>
+          <h1>PAYROLL MANAGEMENT SYSTEM</h1>
+          <center><table  border="3" cellpadding="6" ></center>
+            <br>
+            <caption><b>Employee details</b></caption>
+            <tr><b>
+            <center>
+            <th>Employee Name</th>
+            <th>Employee ID</th>
+            <th>Phone Number</th>
+            <th>Age</th></center>
+            </tr>
+            <center>
+            <td>ABC</td>
+            <td>1234</td>
+            <td>9653214784</td>
+            <td>40</td>
+            </center></tr>
+            <tr><center>
+            <td>XYZ</td>
+            <td>5678</td>
+            <td>9854712345</td>
+            <td>45</td>
+            </center></tr>
+            <tr><center>
+            <td>MNO</td>
+            <td>978</td>
+            <td>9651423647</td>
+            <td>51</td>
+            </center></tr>
+            </table>
+            <center><p>click here to view more<a target="_blank" href="F:\HTML SEM2\3rd project\Employee list.html">about employess in List Formate</a><p></center>
+            <canvas id="myCanvas" width="200" height="100" style="border:1px solid #000000;">
+            </canvas>
+            <script>
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            
+            // Create gradient
+            var grd = ctx.createLinearGradient(0, 0, 200, 0);
+            grd.addColorStop(0, "blue");
+            grd.addColorStop(1, "white");
+            
+            // Fill with gradient
+            ctx.fillStyle = grd;
+            ctx.fillRect(10, 10, 150, 80);
+            </script>
+            <p>Click the button to get your coordinates.</p>
+
+            <button onclick="getLocation()">Try It</button>
+            
+            <p id="demo"></p>
+            
+            <script>
+            var x = document.getElementById("demo");
+            
+            function getLocation() {
+              if (navigator.geolocation) {
+                navigator.geolocation.watchPosition(showPosition);
+              } else { 
+                x.innerHTML = "Geolocation is not supported by this browser.";
+              }
+            }
+                
+            function showPosition(position) {
+                x.innerHTML="Latitude: " + position.coords.latitude + 
+                "<br>Longitude: " + position.coords.longitude;
+            }
+            </script>
+            
+
+         
+            </section>
+        </body>       
+</html>
