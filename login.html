@@ -7,10 +7,19 @@
     <link href="Login.css" rel="stylesheet">
     </head>
     <body>
+      <script>
+        function validateForm() {
+          let x = document.forms["myForm"]["fname"].value;
+          if (x == "") {
+            alert("Name must be filled out");
+            return false;
+          }
+        }
+        </script>
         <div class="log">
             <main>
-              <h1>PAYROLL MANAGEMENT SYSTEM</h1>
-              <h2>LOGIN</h2>
+              <h1 >PAYROLL MANAGEMENT SYSTEM</h1>
+              <h2 >LOGIN</h2>
               <image src="assets/login-rounded.png" class="image"></image>
               <section>
               <form class="form">
@@ -22,6 +31,9 @@
                 <input style="margin-top: 20px;" type="password" id="psw" name="psw">
                 <br>
                 <a href="home.html"><button style="margin-top: 20px;" type="Submit" class="button">Submit</a></button>
+                <a href="payroll.xml"><button style="margin-top: 20px;" type="Submit" class="button">XML</a></button>
+                <a href="formvalidation.html"><button style="margin-top: 20px;" type="Submit" class="button">Form Validation</a></button>
+
               </form>
               </fieldset>
             </section>
