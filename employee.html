@@ -4,11 +4,21 @@
 </head>
 <link href="employee.css" rel="stylesheet">
 <body style="background-color:blueviolet;">
+
+  <script>
+    function validateForm() {
+      let x = document.forms["myForm"]["fname"].value;
+      if (x == "") {
+        alert("Name must be filled out");
+        return false;
+      }
+    }
+  </script>
     <ul>
         <li><img src="assets/home-page.png" class="images" align="left"></li>
         <li><a href="employee.html">Employee Details</a></li>
         <li><a href="view.html">View</a></li>
-        <li><a href="attendance.html">Attendance</a></li>
+        <li><a href="Cookie.html">Cookies</a></li>
         <li><a href="payslip.html">Pay Slip</a></li>
         <li><a href="project.html">Project Management</a></li>
         <li style="float:right"><a class="active" href="home.html">About</a></li>
@@ -60,7 +70,7 @@
             <label for="fname">Address </label>
          <input type="text" id="Address" name="Address">
         <br>
-        <a href="home.html"><button style="margin-top: 20px;" type="Submit" class="button">Submit</a></button>
+        <a href="payroll.xml"><button style="margin-top: 20px;" type="Submit" class="button">Submit</a></button>
          </form>
         </fieldset>
         </section>

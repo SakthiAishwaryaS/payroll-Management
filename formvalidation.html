@@ -17,7 +17,7 @@
              return false;
           }
    
-          if (!/^[a-zA-Z]*$/g.test(document.myForm.Name.value)) {
+          if (!/^[a-z A-Z]*$/g.test(document.myForm.Name.value)) {
             alert("Name should contain alphabets only.!");
             document.myForm.name.focus();
             return false;
@@ -46,7 +46,7 @@
   }
  </script>
 </head>
-<body style="">
+<body>
    <br>
 
    <h1 align="center">Form Validation using JavaScript..!!</h1>

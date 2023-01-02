@@ -1,153 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
+<html>
+   <body>
+      <h2>PAYROLL MANAGEMENT</h2>
+      <table border="1">
+         <tr bgcolor="#9acd32">
+            <th style="text-align:left">employee ID</th>
+            <th style="text-align:left">employee Name</th>
+            <th style="text-align:left">employee phoneno</th>
+            <th style="text-align:left">employee address</th>
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Payroll</title>
-
-    <link rel="stylesheet" href="./assets/style.css">
-
-</head>
-<body>
-    
-    <div class="form-content">
-
-        <div class="color-link">
-            <a href="./bg-color.html">Settings</a>
-        </div>
-        
-        <h2>Hello <span id="myName">Buddy</span>!</h2>
-
-            <form action="./payroll success.html" autocomplete="off" name="myform">
-                
-                <div class="mt">
-                    <label for="empname">Employee Name<span class="imp">*</span></label>
-                    <input type="text" name="empname" id="empname" title="Only Alpha-Characters Allowed" onchange="localstorage()" autofocus required>
-                    <span class="helper" id="empname-helper"></span>
-                </div>
-                
-                <div class="mt">
-                    <label for="mobile">Mobile No.<span class="imp">*</span></label>
-                    <input type="tel" name="mobile" id="mobile" maxlength="10" title="Required Length: 10" pattern="[0-9]{10}" required>
-                    <span class="helper" id="mobile-helper"></span>
-                </div>                
-                
-                <div class="mt">
-                    <label for="email">Email<span class="imp">*</span></label>
-                    <input type="email" name="email" id="email" pattern="[a-z0-9._%+-]+@[mca]+[\.christuniversity]+[\.in]$" title="Format: your_name@mca.christuniversity.in" placeholder="eg: your_name@mca.christuniversity.in" required>
-                    <span class="helper" id="email-helper"></span>
-                </div>
-                
-                <div class="mt">
-                    <label for="password">Password<span class="imp">*</span></label>
-                    <input type="password" name="password" id="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-                    <span class="helper" id="password-helper"></span>
-                </div>
-                
-                <div class="mt">
-                    <label for="vehicle">Position<span class="imp">*</span></label>
-                    <select name="position" id="position" title="Select your Position" onchange="session()" required>
-                        <option value="0" selected disabled>Slect Your Position</option>
-                        <option value="manager">Manager</option>
-                        <option value="employee">Employee</option>
-                        <option value="developer">Developer</option>
-                    </select>
-                    <span class="helper" id="position-helper"></span>
-                </div>
-                
-                <div class="mt">
-                    <label for="age">Employee Age<span class="imp">*</span></label>
-                    <input type="number" name="age" id="age" min="21" title="Enter Your Employee Age" required>
-                    <span class="helper" id="age-helper"></span>
-                </div>
-                    
-                <button class="submit" type="submit">Register Service</button>
-                
-            </form>
-        </div>
-        
-        <script>
-            var empname = document.getElementById('empname');
-            var mobile = document.getElementById('mobile');
-            var email = document.getElementById('email');
-            var password = document.getElementById('password');
-            var position = document.getElementById('position');
-            var age = document.getElementById('age');
- 
-            var empnameHelp = document.getElementById('empname-helper');
-            var mobileHelp = document.getElementById('mobile-helper');
-            var emailHelp = document.getElementById('email-helper');
-            var passwordHelp = document.getElementById('password-helper');
- 
-            empname.oninput = function () {
-                var spl = /^[!@#$%^&*()~`\_\-\+\={}\[\]|\\;:'",./<>?]/g
-                var letters = /[0-9]/g
-                if (empname.value.match(letters)|| empname.value.match(spl)) {
-                    nameLen = empname.value.length
-                    empname.value = empname.value.slice(0, nameLen - 1)
-                }
-
-                var msg = ""
-                if (empname.value.length < 2)
-                    msg += "Min. 2 Characters Required!"
-                empnameHelp.innerHTML = msg
-
-                if (empname.value.length >= 2) {
-                    empname.style.outlineColor = "var(--success)"
-                    empname.style.border = "1px solid var(--success)"
-                    return
-                }
-                empname.style.outlineColor = "var(--danger)"
-                empname.style.border = "1px solid var(--danger)"
-            }
-
-            function set_get_Cookie() {
-                var d = new Date();
-                d.setTime(d.getTime() + (1 * 60 * 1000));
-                var expires = "expires=" + d.toUTCString();
-                document.cookie = "Employee Name = " + empname.value + ";" + expires + "; Path=/;";
-                document.cookie = "Mobile No = " + mobile.value + ";" + expires + "; Path=/;";
-                document.cookie = "Email = " + email.value + ";" + expires + "; Path=/;";
-                document.cookie = "Position = " + position.value + ";" + expires + "; Path=/;";
-                document.cookie = "Age = " + age.value + ";" + expires + "; Path=/;";
-
-                if (document.cookie.length != 0) {
-                    alert("Cookies:" + "\nEmployee Name = " + empname.value + "\nMobile No = " + mobile.value + "\nEmail = " + email.value + "\nPosition = " + position.value + "\nAge = " + age.value);
-                }
-                else {
-                    alert("Cookie not available :(");
-                }
-            }
-
-            function localstorage() {
-                var name = document.getElementById("empname").value;
-
-                if (typeof (Storage) !== "undefined") {
-                    // Store
-                    localStorage.setItem("empname", name);
-                    // Retrieve
-                    document.getElementById("myName").innerHTML = localStorage.getItem("empname");
-                } else {
-                    document.getElementById("myName").innerHTML = "Sorry, your browser does not support Web Storage...";
-                }
-            }
-
-            function session() {
-                var position = document.getElementById("position").value;
-
-                if (typeof (Storage) !== "undefined") {
-                    // Store
-                    sessionStorage.setItem("positions", position);
-                    // Retrieve
-                    document.getElementById("position-helper").innerHTML = sessionStorage.getItem("positions") + " is a Great Position!";
-                } else {
-                    document.getElementById("position-helper").innerHTML = "Sorry, your browser does not support Web Storage...";
-                }
-            }
-        </script>
-
-</body>
+         </tr>
+         <tr>
+            <td>1234</td>
+            <td>Aishwarya</td>
+            <td>9442578156</td>
+            <td>BANGALORE</td>
+         </tr>
+         <tr>
+            <td>1225</td>
+            <td>Shivam</td>
+            <td>9442578156</td>
+            <td>BANGALORE</td>
+         </tr>
+         <tr>
+            <td>1357</td>
+            <td>Dhanya</td>
+            <td>9442578156</td>
+            <td>Chennai</td> 
+         </tr>
+         <tr>
+            <td>1357</td>
+            <td>Bhumika</td>
+            <td>9442578156</td>
+            <td>Hosur</td>   
+         </tr>
+         <tr>
+         </tr>
+         <tr>
+            <td>1357</td>
+            <td>sridharshan</td>
+            <td>9442578156</td>
+            <td>Mangalore</td>  
+         </tr>
+         <tr>
+            <td>1357</td>
+            <td>Apporva</td>
+            <td>9442578156</td>
+            <td>Mangalore</td> 
+         </tr>
+         <tr>
+            <td>1357</td>
+            <td>varsha</td>
+            <td>9442578156</td>
+            <td>Chennai</td>
+            
+         </tr>
+      </table>
+   </body>
 </html>
